@@ -25,8 +25,6 @@ module.exports = {
       // Style
       {
         test: /\.s?[ac]ss$/,
-        // Exclude everything except ifabric.
-        exclude: /node_modules(?!(\/|\\)@ifabric)/,
         use: [
           MiniCssExtractPlugin.loader,
           {
