@@ -52,9 +52,21 @@ module.exports = {
             loader: 'file-loader',
             options: {
               limit: 8192,
-              name: '[name].[ext]',
+              name(resourcePath, resourceQuery) {
+                const entryDir = resourceQuery
+                  .substring(1)
+                  .split('&')
+                  .filter((key) => key.startsWith('entryDir='))
+                  .map((key) => key.split('=').pop())
+                  .join('');
+
+                return path.join(entryDir, `[name].[ext]`);
+              },
             },
           },
+          {
+            loader: './entry-dir-attacher-loader.js'
+          }
         ],
       },
     ],
