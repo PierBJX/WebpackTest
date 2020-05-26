@@ -1,0 +1,17 @@
+@import "themify";
+
+//define a theme map
+$theme-map: (
+  "dark": (
+    "asset1": url(../assets/myAsset1-dark.svg),
+    "asset2": url(../assets/myAsset2-dark.svg),
+    "asset3": url(../assets/myAsset3-dark.svg),
+  ),
+  "light": (
+    "asset1": url(../assets/myAsset1.svg),
+    "asset2": url(../assets/myAsset2.svg),
+    "asset3": url(../assets/myAsset3.svg),
+  ),
+);
+//call initialize mixin with the theme-map variable
+@include sass-themify-init($theme-map);

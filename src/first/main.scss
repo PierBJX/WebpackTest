@@ -1,0 +1,12 @@
+@import "../scss/themes.scss";
+
+// Add custom style
+@include sass-themify {
+  .myAsset1 {
+    background-image: sass-themify-get-elem("asset1");
+  }
+
+  .myAsset2 {
+    background-image: sass-themify-get-elem("asset2");
+  }
+}
